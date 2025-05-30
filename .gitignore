@@ -1,0 +1,23 @@
+# Ignorar ambientes virtuais
+.venv/
+.venv310/
+
+# Ignorar dependências locais
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorar arquivos temporários
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignorar arquivos de notebook com checkpoints
+.ipynb_checkpoints/
+
+# Ignorar arquivos de sistema do VS Code
+.vscode/
+
+# Ignorar arquivos HTML interativos se quiser mantê-los locais apenas
+imagens/lda_interativo.html
