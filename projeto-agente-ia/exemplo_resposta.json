@@ -1,0 +1,17 @@
+{
+    "weather": [
+        {
+            "description": "céu limpo",
+            "icon": "01d"
+        }
+    ],
+    "main": {
+        "temp": 27.3,
+        "feels_like": 28.1,
+        "temp_min": 25.0,
+        "temp_max": 30.0,
+        "pressure": 1012,
+        "humidity": 60
+    },
+    "name": "São Paulo"
+}
