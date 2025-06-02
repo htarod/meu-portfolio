@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projeto de Análise de Dados com ETL</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f7f7;
+      color: #293c58;
+      margin: 0;
+      padding: 40px;
+      max-width: 1000px;
+      margin-inline: auto;
+    }
+    h1, h2 {
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    pre {
+      background: #eee;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    a {
+      color: #293c58;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Projeto de Análise de Dados com ETL</h1>
+
+  <p><strong>Descrição:</strong> Este projeto simula um fluxo completo de ETL (Extração, Transformação e Carga) aplicado a dados de vendas mensais. O objetivo é transformar dados brutos em insights acionáveis para tomada de decisão.</p>
+
+  <h2>Tecnologias Utilizadas</h2>
+  <ul>
+    <li>Python</li>
+    <li>Pandas</li>
+    <li>Jupyter Notebook</li>
+    <li>Matplotlib</li>
+  </ul>
+
+  <h2> Etapas do Processo</h2>
+  <ul>
+    <li>Leitura dos arquivos CSV (Janeiro e Fevereiro)</li>
+    <li>Unificação e limpeza dos dados</li>
+    <li>Cálculo de colunas derivadas (como Valor Total)</li>
+    <li>Visualização com gráficos</li>
+  </ul>
+
+  <h2>Código de Exemplo</h2>
+  <pre><code>
+df_jan = pd.read_csv("dados/vendas_janeiro.csv")
+df_fev = pd.read_csv("dados/vendas_fevereiro.csv")
+df = pd.concat([df_jan, df_fev])
+df["Valor Total"] = df["Quantidade"] * df["Preço Unitário"]
+  </code></pre>
+
+  <h2>Visualização</h2>
+  <p>Gráfico gerado com base nos valores totais por mês:</p>
+  <img src="projeto-etl/imagens/grafico-vendas.png" alt="Gráfico de Vendas por Mês">
+
+  <h2> Repositório</h2>
+  <p><a href="https://github.com/htarod/projeto-etl" target="_blank">github.com/htarod/projeto-etl</a></p>
+
+  <p><a href="index.html">← Voltar ao início</a></p>
+
+</body>
+</html>
