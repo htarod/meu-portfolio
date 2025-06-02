@@ -41,14 +41,14 @@
 </head>
 <body>
 
-<h1>📊 Regressão Linear - Preço de Imóveis em São Paulo</h1>
+<h1>Regressão Linear - Preço de Imóveis em São Paulo</h1>
 
 <p>Este projeto analisa como diferentes características influenciam o preço de imóveis em São Paulo. Utilizei regressão linear simples e múltipla para modelar essa relação com base em dados reais.</p>
 
-<h2>1. 📂 Dataset e Objetivo</h2>
+<h2>1.Dataset e Objetivo</h2>
 <p>O conjunto de dados foi obtido no <a href="https://www.kaggle.com/datasets/argonalyst/sao-paulo-real-estate-sale-rent-april-2019" target="_blank">Kaggle</a>, contendo informações como área útil, número de quartos, banheiros, suítes e vagas de garagem.</p>
 
-<h2>2. 🔎 Limpeza e Exploração Inicial</h2>
+<h2>2. Limpeza e Exploração Inicial</h2>
 <pre><code>df = pd.read_csv('dados/imoveis_sp.csv')
 df = df[(df['Price'] > 0) & (df['Size'] > 0)]
 df.dropna(subset=['Price', 'Size'], inplace=True)
@@ -57,7 +57,7 @@ df.dropna(subset=['Price', 'Size'], inplace=True)
 <h3>Matriz de Correlação</h3>
 <img src="projeto-regressao/imagens/grafico-correlacao.png" alt="Matriz de Correlação">
 
-<h2>3. 📈 Regressão Linear Simples</h2>
+<h2>3.Regressão Linear Simples</h2>
 <p>Analisamos a relação entre área útil (Size) e preço (Price).</p>
 
 <pre><code>
@@ -73,7 +73,7 @@ print(modelo.summary())
 
 <p><strong>Resultado:</strong> cada m² adicional aumenta o preço em R$ 3.826,36. O modelo explica 14,3% da variação do preço.</p>
 
-<h2>4. 🔁 Regressão Linear Múltipla</h2>
+<h2>4.Regressão Linear Múltipla</h2>
 <p>Incluímos mais variáveis: Size, Rooms, Toilets, Suites e Parking.</p>
 
 <pre><code>
@@ -92,7 +92,7 @@ print(modelo_multiplo.summary())
 </ul>
 </p>
 
-<h2>5. 📊 Gráficos Complementares</h2>
+<h2>5.Gráficos Complementares</h2>
 
 <h3>Distribuição dos Preços</h3>
 <img src="projeto-regressao/imagens/distribuicao-precos.png" alt="Distribuição de Preços">
@@ -100,7 +100,7 @@ print(modelo_multiplo.summary())
 <h3>Preço vs. Tamanho com número de Vagas</h3>
 <img src="projeto-regressao/imagens/size-vs-price-parking.png" alt="Dispersão Size vs Price com Parking">
 
-<h2>🔗 Repositório no GitHub</h2>
+<h2>Repositório no GitHub</h2>
 <p><a href="https://github.com/htarod/projeto-regressao" target="_blank">github.com/htarod/projeto-regressao</a></p>
 
 </body>
