@@ -2,18 +2,18 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Projeto NLP - Análise de Sentimentos</title>
+  <title>Projeto NLP - Classificação de Sentimentos com Dados Reais</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
       background-color: #f9f9f9;
       color: #333;
     }
-    h1, h2 {
+    h1, h2, h3 {
       color: #1e4976;
     }
     img {
@@ -22,12 +22,7 @@
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-    code {
-      background-color: #f4f4f4;
-      padding: 2px 4px;
-      border-radius: 4px;
-
-    }
+  
     .voltar {
       display: inline-block;
       margin-top: 40px;
@@ -39,43 +34,70 @@
 </head>
 <body>
 
-  <h1>Projeto NLP: Análise de Sentimentos com Classificação de Texto</h1>
+  <h1>Projeto NLP: Classificação de Sentimentos com Dados Reais</h1>
 
-  <h2>Introdução</h2>
   <p>
-    Neste projeto, desenvolvi um classificador de sentimentos capaz de identificar se uma avaliação textual é positiva ou negativa. A ideia foi demonstrar como técnicas de NLP, combinadas com machine learning, podem ser usadas para interpretar linguagem natural.
+    Este projeto utiliza dados reais do Reclame Aqui para aplicar técnicas de Processamento de Linguagem Natural (NLP) com o objetivo de classificar automaticamente o sentimento de reclamações textuais.
   </p>
 
   <div class="em-outras-palavras">
-    <strong>Em outras palavras:</strong> ensinei uma máquina a “ler” frases de avaliação de clientes e dizer se o sentimento é positivo ou negativo — uma ferramenta útil para empresas entenderem a opinião dos consumidores automaticamente.
+    <strong>Em outras palavras:</strong> ensinei a máquina a entender reclamações de clientes e responder automaticamente se o sentimento parece urgente, negativo ou neutro — um passo inicial para automatizar atendimentos com inteligência.
   </div>
 
-  <h2>Como desenvolvi o projeto</h2>
-  <p>
-    Trabalhei com um conjunto de dados simulado contendo avaliações com polaridades conhecidas. Realizei a limpeza e pré-processamento com a biblioteca NLTK, removendo stopwords, pontuações e aplicando stemming.
-  </p>
-  <p>
-    Em seguida, usei vetorização com TF-IDF para transformar o texto em números e treinei dois modelos: Regressão Logística e SVM. Avaliei o desempenho usando matriz de confusão.
-  </p>
+  <h2>Etapas do projeto</h2>
 
-  <h2>Visualizações</h2>
-  <p>Nuvem de palavras após o pré-processamento:</p>
-  <img src="projeto-nlp/imagens/wordcloud.png" alt="WordCloud das avaliações">
-
-  <p>Matriz de confusão do classificador:</p>
-  <img src="projeto-nlp/imagens/matriz_confusao.png" alt="Matriz de Confusão">
-
-  <h2>Resultados</h2>
+  <h3>Coleta e pré-processamento</h3>
   <p>
-    O modelo alcançou mais de 85% de acurácia, mesmo sendo treinado com dados simulados. Isso mostra que técnicas simples de NLP podem ser bastante eficazes em tarefas de classificação textual.
+    Utilizei um arquivo real contendo milhares de reclamações já pré-processadas (sem stopwords, pontuações e termos irrelevantes). A coluna freq_words_removed contém o texto limpo pronto para análise.
   </p>
 
-  <h2>Conclusão</h2>
+  <h3>Visualização com WordCloud</h3>
   <p>
-    Este projeto mostra como é possível aplicar machine learning e NLP para transformar textos não estruturados em dados úteis. Soluções como essa são aplicadas amplamente no mercado para monitoramento de reputação, atendimento automatizado e análise de feedbacks.
+    Para uma análise visual das palavras mais frequentes, criei uma nuvem de palavras com todos os textos do dataset.
+  </p>
+  <img src="projeto-nlp/imagens/wordcloud.png" alt="WordCloud das reclamações">
+
+  <h3>Classificação de Sentimentos</h3>
+  <p>
+    A classificação foi feita com base em regras simples que procuram termos-chave no texto. Por exemplo, a presença de “cancelamento” ou “atraso” classifica como urgente, enquanto expressões como “péssimo” ou “nunca mais” indicam um sentimento negativo. Quando não há indícios fortes, o texto é classificado como neutro.
   </p>
 
-  <p><strong>Repositório:</strong> <a href="https://github.com/htarod/projeto-nlp" target="_blank">github.com/htarod/projeto-nlp</a></p>
+  <h3>Distribuição das classes classificadas</h3>
+  <p>
+    Abaixo, um gráfico de barras representa a frequência de cada categoria identificada pela IA nas reclamações processadas.
+  </p>
+  <img src="projeto-nlp/imagens/distribuicao_classes.png" alt="Distribuição das classes classificadas">
+
+  <h3>Avaliação com Matriz de Confusão</h3>
+  <p>
+    Como os dados não estavam rotulados originalmente, simulei rótulos aleatórios para demonstrar a construção de uma matriz de confusão com a biblioteca sklearn. Esta etapa permite visualizar como um modelo real seria avaliado.
+  </p>
+  <img src="projeto-nlp/imagens/matriz_confusao.png" alt="Matriz de Confusão com rótulos simulados">
+
+  <h3>Exemplo de classificação</h3>
+  <p><strong>Texto:</strong> "Fiz o cancelamento da compra e até agora não recebi o reembolso."</p>
+  <p><strong>Classificação:</strong> Urgente</p>
+
+  <h2>Ferramentas utilizadas</h2>
+  <ul>
+    <li>Python com: pandas, matplotlib, WordCloud, scikit-learn, numpy</li>
+    <li>Jupyter Notebook</li>
+  </ul>
+
+  <h2>Próximos passos</h2>
+  <p>
+    Este projeto pode ser evoluído com o uso de modelos supervisionados de machine learning (como Naive Bayes ou Random Forest), utilizando um conjunto de dados rotulado para aumentar a precisão e confiabilidade da classificação.
+  </p>
+
+  <h2>Repositório e execução</h2>
+  <p>
+    <strong>Repositório:</strong> <a href="https://github.com/htarod/projeto-nlp" target="_blank">github.com/htarod/projeto-nlp</a>
+  </p>
+  <p>
+    <a href="https://colab.research.google.com/github/htarod/meu-portfolio/blob/main/projeto-nlp/nlp-projeto-completo.ipynb" target="_blank">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Executar no Google Colab">
+    </a>
+  </p>
 
   <a class="voltar" href="index.html">← Voltar ao início</a>
 

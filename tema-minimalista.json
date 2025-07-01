@@ -1,0 +1,21 @@
+{
+  "name": "Minimalista Branco e Azul",
+  "dataColors": ["#647DEE", "#7F53AC", "#86A8E7", "#91EAE4", "#4A90E2"],
+  "background": "#FFFFFF",
+  "foreground": "#333333",
+  "tableAccent": "#647DEE",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "color": { "solid": { "color": "#333333" } },
+        "background": { "solid": { "color": "#FFFFFF" } },
+        "fontSize": 12
+      },
+      "titleText": {
+        "color": { "solid": { "color": "#333333" } },
+        "fontSize": 14,
+        "fontFamily": "Segoe UI"
+      }
+    }
+  }
+}
