@@ -1,67 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agatha Rodrigues | Portfólio</title>
+  <meta charset="UTF-8">
+  <title>Portfólio - Agatha Rodrigues</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f7f7;
-      color: #293c58;
-      margin: 0;
-      padding: 0 20px;
-      max-width: 900px;
-      margin-inline: auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      max-width: 860px;
+      margin: auto;
+      padding: 30px 20px;
+      line-height: 1.5;
     }
-
-    header {
-      padding: 40px 0 10px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
+    h1, h2 {
+      color: #1e4976;
+      font-weight: 600;
       margin-bottom: 10px;
     }
-
-    header p {
-      font-size: 1.2rem;
-      color: #242323;
+    header {
+      text-align: center;
+      margin-bottom: 30px;
     }
-
-    section {
-      margin: 40px 0;
+    p {
+      margin: 8px 0;
     }
-
-    h2 {
-      font-size: 1.6rem;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
+    .descricao, .tecnologia {
+      font-style: italic;
+      font-size: 0.95em;
+      margin-bottom: 14px;
+      color: #313131;
     }
-
     ul {
       list-style: none;
       padding-left: 0;
+      margin: 0;
     }
-
     li {
-      background-color: #fff;
-      margin-bottom: 15px;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin: 4px 0;
     }
-
     a {
-      color: #242323;
+      color: #1e4976;
       text-decoration: none;
-      font-weight: bold;
     }
-
     a:hover {
       text-decoration: underline;
+    }
+    .categoria {
+      margin-bottom: 28px;
+    }
+    hr {
+      margin: 30px 0 20px;
+      border: none;
+      border-top: 1px solid #ddd;
     }
   </style>
 </head>
@@ -69,34 +60,129 @@
 
   <header>
     <h1>Agatha Rodrigues</h1>
-    <p>Python | SQL | NLP | Power BI | DAX | Excel |Storytelling</p>
+    <p>Python | SQL | NLP | Excel | DAX</p>
   </header>
 
-  <section>
-    <h2>Sobre Mim</h2>
-    <p>Formada em Publicidade e Propaganda, acumulo cinco anos de experiência em produção e coordenação de eventos.
-Recentemente, concluí minha formação em Ciência de Dados, onde venho aprimorando minhas habilidades em Power BI, Tableau, modelagem de dados e storytelling com dados.</p>
-  </section>
+  <h2>Sobre Mim</h2>
+  <p>
+Olá! Eu sou a Agatha, cientista de dados recém formada, e este é o meu portfólio em Ciência de Dados. Aqui você vai encontrar projetos que desenvolvi com muito cuidado, de forma independente para demonstrar minhas habilidades técnicas,
+explorando diferentes campos como: estatística, visualização, automação e linguagem natural na resolução de problemas.
+    
+  </p>
 
-<section>
+  <hr>
+
   <h2>Projetos</h2>
-  <ul>
-    <li><a href="projeto-etl.html"> Análise de Dados com ETL</a></li>
-    <li><a href="projeto-excel.html"> Automatização com Excel Avançado</a></li>
-    <li><a href="projeto-powerbi.html"> Dashboard em Power BI</a></li>
-    <li><a href="projeto-nlp.html"> Processamento de Linguagem Natural</a></li>
-    <li><a href="projeto-agente-ia.html"> Agente de Inteligência Artificial</a></li>
-    <li><a href="projeto-regressao.html"> Regressão Linear com Dados Imobiliários</a></li>
-    <li><a href="projeto-topicos-reclameaqui.html"> Análise de Tópicos - Reclame Aqui</a></li>
-  </ul>
-</section>
 
+  <div class="categoria">
+    <h3>ETL e Visualização</h3>
+    <p class="descricao">Projetos com foco em coleta, tratamento e visualização de dados públicos, com gráficos informativos e exploratórios.</p>
+    <ul>
+      <li><a href="projeto-visualizacao-enem.html">Visualização ENEM</a></li>
+      <li><a href="projeto-visualizacao-ibge.html">Visualização IBGE</a></li>
+      <li><a href="projeto-etl.html">Projeto ETL com SQLite</a></li>
+    </ul>
+  </div>
 
-  <section>
-    <h2>Contate-me</h2>
-    <p>Github: <a href="https://github.com/htarod" target="_blank">github.com/htarod</a></p>
-    <p>Linkedin <a href="https://www.linkedin.com/in/agatharrod/" target="_blank">linkedin.com/in/agatharrod/</a></p>
-  </section>
+  <div class="categoria">
+    <h3>Estatística Aplicada</h3>
+    <p class="descricao">Projetos com técnicas estatísticas aplicadas a dados educacionais para identificar padrões, correlações e segmentações.</p>
+    <ul>
+      <li><a href="projeto-anova-enem.html">ANOVA ENEM</a></li>
+      <li><a href="projeto-clusterizacao-enem.html">Clusterização ENEM</a></li>
+      <li><a href="projeto-correlacao-enem.html">Correlação ENEM</a></li>
+      <li><a href="projeto-regressao.html">Regressão ENEM</a></li>
+    </ul>
+  </div>
+
+  <div class="categoria">
+    <h3>Processamento de Linguagem Natural (NLP)</h3>
+    <p class="descricao">Análise e interpretação automática de textos, extração de entidades e agrupamento por tópicos com técnicas de NLP.</p>
+    <ul>
+      <li><a href="projeto-nlp.html">Análise de Sentimentos (NLP)</a></li>
+      <li><a href="projeto-ner.html">Extração de Entidades Nomeadas (NER)</a></li>
+      <li><a href="projeto-topicos-reclameaqui.html">Modelagem de Tópicos em Reclamações</a></li>
+      <li><a href="projeto-agente-ia.html">Agente de IA com Classificação</a></li>
+      <li><a href="projeto-resposta-ia.html">Resposta Automática com IA</a></li>
+    </ul>
+  </div>
+
+  <div class="categoria">
+    <h3>Excel e Power BI</h3>
+    <p class="descricao">Projetos com dashboards interativos, automações em planilhas e análises usando Excel, Power BI e SQL.</p>
+    <ul>
+      <li><a href="projeto-excel.html">Excel com VBA (Controle de Gastos)</a></li>
+      <li><a href="projeto-excel-estatistica.html">Excel com Estatística</a></li>
+      <li><a href="projeto-powerbi.html">Dashboard com Power BI</a></li>
+      <li><a href="projeto-sql-powerbi.html">Power BI com SQL e Python</a></li>
+    </ul>
+  </div>
+
+  <div class="categoria">
+    <h3>Automações</h3>
+    <p class="descricao">Soluções automatizadas com VBA ou IA, voltadas para produtividade e respostas inteligentes em tempo real.</p>
+    <ul>
+      <li><a href="projeto-excel.html">Automação de Gastos com VBA</a></li>
+      <li><a href="projeto-resposta-ia.html">Resposta Inteligente com IA</a></li>
+    </ul>
+  </div>
+  <hr>
+ <p><h2>Ferramentas Utilizadas</h2></p>
+<br>
+<p><strong>Análise e Manipulação de Dados</strong></p>
+<ul>
+  <li>pandas– manipulação de dados tabulares</li>
+  <li>numpy – operações matemáticas vetorizadas</li>
+</ul>
+
+<p><strong>Visualização de Dados:</strong></p>
+<ul>
+  <li>matplotlib – gráficos estáticos</li>
+  <li>seaborn – visualizações estatísticas</li>
+  <li>plotly – gráficos interativos (em projetos com dashboard)</li>
+  <li>wordcloud – nuvem de palavras para NLP</li>
+</ul>
+
+<p><strong>Machine Learning & Estatística:</strong></p>
+<ul>
+  <li>scikit-learn – regressão, clusterização, classificação</li>
+  <li>statsmodels – testes estatísticos e ANOVA</li>
+  <li>yellowbrick – visualização de métricas</li>
+</ul>
+
+<p><strong>Processamento de Linguagem Natural (NLP)</strong></p>
+<ul>
+  <li>nltk – tokenização, stopwords, lematização</li>
+  <li>spaCy – extração de entidades nomeadas (NER)</li>
+  <li>gensim – modelagem de tópicos (LDA)</li>
+  <li>re – expressões regulares</li>
+</ul>
+
+<p><strong>Utilitários e Integrações</strong></p>
+<ul>
+  <li>os, json, datetime – manipulação de arquivos, datas e dados</li>
+  <li>requests – chamadas a APIs públicas</li>
+  <li>sqlite3 – integração com base de dados SQLite</li>
+</ul>
+
+<p><strong>Excel e BI</strong></p>
+<ul>
+  <li>Excel – uso avançado com dashboards e estatística</li>
+  <li>VBA – automação de planilhas</li>
+  <li>openpyxl, xlsxwriter – integração com Excel via Python</li>
+</ul>
+
+<p><strong>Power BI</strong></p>
+<ul>
+  <li>Power BI – dashboards e relatórios executivos</li>
+  <li>DAX – fórmulas e indicadores customizados</li>
+</ul>
+
+<p><strong>Ambientes e IDEs</strong></p>
+<ul>
+  <li>Jupyter Notebook – prototipagem e visualização de código</li>
+  <li>VS Code – desenvolvimento e organização de projetos</li>
+</ul>
 
 </body>
 </html>

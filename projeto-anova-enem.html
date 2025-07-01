@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto ANOVA - Enem por Escola</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #1e4976;
+    }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .voltar {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #1e4976;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Projeto ANOVA: Desempenho Escolar no Enem por Tipo de Escola</h1>
+
+<h2>Introdução</h2>
+<p>
+Neste projeto, utilizei o teste ANOVA para avaliar se há diferença significativa no desempenho médio dos alunos no Enem 2015 de acordo com o tipo de administração escolar (Federal, Estadual, Municipal ou Privada), considerando apenas escolas do município de São Paulo.
+</p>
+
+<p><strong>Em outras palavras:</strong> eu quis entender se o tipo de escola realmente afeta a média dos alunos. Será que escolas privadas têm desempenho melhor que escolas públicas? Esse teste estatístico ajuda a responder essa pergunta.</p>
+
+<h2>Execução</h2>
+<p>
+Os dados foram obtidos do conjunto "Microdados do Enem por Escola 2015", publicado pelo INEP. Após filtrar apenas as escolas da cidade de São Paulo, utilizei a coluna <code>NU_MEDIA_TOT</code> para representar o desempenho geral.
+</p>
+
+<p>
+A análise foi feita com o teste ANOVA da biblioteca <code>scipy</code>, que avalia se as médias dos grupos comparados são significativamente diferentes entre si.
+</p>
+
+<h2>Visualizações</h2>
+<p>Distribuição das médias por tipo de escola (Boxplot):</p>
+<img src="projeto-anova-enem/imagens/boxplot-dependencia.png" alt="Boxplot por tipo de escola">
+
+<p>Médias gerais por tipo de escola:</p>
+<img src="projeto-anova-enem/imagens/grafico-media-por-dependencia.png" alt="Média geral por dependência administrativa">
+
+<h2>Resultado do Teste ANOVA</h2>
+<ul>
+  <li><strong>F = 6560.95</strong></li>
+  <li><strong>p-valor &lt; 0.0001</strong></li>
+</ul>
+<p>Esse resultado indica com altíssima confiança estatística que existem diferenças reais entre os tipos de escola.</p>
+
+<p><strong>Em outras palavras:</strong> os tipos de escola não têm o mesmo desempenho. Escolas federais e privadas, por exemplo, costumam ter notas mais altas que as municipais ou estaduais.</p>
+
+<h2>Conclusão</h2>
+<p>
+Com essa análise, consegui mostrar como o tipo de administração escolar pode influenciar os resultados dos estudantes no Enem. Essas informações podem apoiar decisões de políticas públicas e levantar discussões sobre equidade no sistema educacional.
+</p>
+
+<a class="voltar" href="index.html">← Voltar ao início</a>
+
+</body>
+</html>

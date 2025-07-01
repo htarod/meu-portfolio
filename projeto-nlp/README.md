@@ -1,4 +1,4 @@
-# Análise de Sentimentos com NLP
+## Análise de Sentimentos com NLP
 
 Projeto de classificação de sentimentos utilizando técnicas de Processamento de Linguagem Natural (NLP) com Python.
 

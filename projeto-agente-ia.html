@@ -1,51 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeto com Agente de Inteligência Artificial</title>
+  <title>Agente de IA - Classificador de Mensagens</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 40px;
       background-color: #f9f9f9;
       color: #333;
+      max-width: 900px;
+      margin-inline: auto;
     }
-    h1 {
-      color: #2c3e50;
+    h1, h2 {
+      color: #1e4976;
+    }
+    .codigo {
+      background-color: #f1f1f1;
+      border-left: 5px solid #1e4976;
+      padding: 16px;
+      margin: 20px 0;
+      font-family: Consolas, monospace;
+      overflow-x: auto;
+    }
+    img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      margin: 20px 0;
+    }
+    .destaque {
+      background-color: #e0f0ff;
+      padding: 12px;
+      border-radius: 5px;
     }
     a {
-      color: #2980b9;
+      color: #1e4976;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
+    .voltar {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #1e4976;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
-  <h1>Projeto com Agente de Inteligência Artificial</h1>
 
-  <p><strong>Descrição:</strong> Desenvolvi um agente inteligente capaz de interagir com APIs externas, interpretar comandos em linguagem natural e executar ações com base em raciocínio contextual.</p>
+  <h1>Agente de IA: Classificador de Mensagens</h1>
 
-  <p><strong>Objetivo:</strong> Criar uma solução que simula um assistente inteligente capaz de buscar, filtrar e responder informações automaticamente.</p>
-
-  <p><strong>Tecnologias utilizadas:</strong> Python, LangChain, OpenAI API, requests, JSON, FastAPI.</p>
-
-  <p><strong>Etapas do processo:</strong></p>
-  <ul>
-    <li>Criação de pipeline de entrada com interpretação semântica</li>
-    <li>Integração com API externa (ex: busca de dados ou clima)</li>
-    <li>Implementação de lógica para decisão baseada em contexto</li>
-    <li>Resposta gerada com justificativa e histórico de raciocínio</li>
-  </ul>
-
-  <p><strong>Resultado:</strong> Um protótipo funcional de agente inteligente com habilidade de processar perguntas e agir de forma autônoma para buscar e entregar respostas relevantes.</p>
-
-  <p><strong>Link para o repositório:</strong>
-    <a href="https://github.com/htarod/projeto-agente-ia" target="_blank">github.com/htarod/projeto-agente-ia</a>
+  <p>
+    Desenvolvi este projeto como uma aplicação simples, porém prática, de Inteligência Artificial para classificar mensagens de clientes com base em dois critérios principais: urgência e sentimento. Para isso, utilizei técnicas de Processamento de Linguagem Natural (NLP) com a biblioteca TextBlob. Além da classificação, o agente também simula o envio da resposta para uma API — algo útil em sistemas de atendimento ao cliente.
   </p>
 
-  <p><a href="index.html">← Voltar ao início</a></p>
+  <p><strong>Em outras palavras:</strong> criei uma inteligência que "lê" mensagens de clientes e decide se elas são urgentes, se estão carregadas de sentimentos negativos ou positivos, e ainda envia essas informações automaticamente para um sistema de atendimento.</p>
+
+  <h2>Aplicações possíveis</h2>
+  <ul>
+    <li>Central de atendimento automatizada</li>
+    <li>Triagem de mensagens em help desk</li>
+    <li>Classificação de e-mails por prioridade</li>
+    <li>Pré-processamento em chatbots</li>
+  </ul>
+
+  <h2>Exemplo de execução</h2>
+  <img src="projeto-agente-ia/imagens/execucao-agente-ia.png" alt="Execução do agente IA no terminal">
+
+  <h2>Evolução do projeto</h2>
+  <p>
+    Com base neste classificador, desenvolvi uma segunda versão que não apenas identifica a classificação, mas também gera uma resposta automática com base na análise. Essa versão também possui uma interface interativa feita com Streamlit. Você pode acessar o projeto completo aqui:
+  </p>
+
+  <p><a href="projeto-resposta-ia.html"><strong>→ Agente de IA com Resposta Automática e Dashboard</strong></a></p>
+
+  <a class="voltar" href="index.html">← Voltar ao início</a>
+
 </body>
 </html>

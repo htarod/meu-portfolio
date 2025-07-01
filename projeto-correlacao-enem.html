@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto de Correlação - Matrículas x ENEM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #1e4976;
+    }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .voltar {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #1e4976;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Projeto de Correlação: Número de Matrículas x Desempenho Médio no ENEM</h1>
+
+<h2>Introdução</h2>
+<p>
+Neste projeto, investiguei se existe correlação entre o número de alunos matriculados em uma escola e o desempenho médio desses alunos no Enem 2015. Os dados utilizados são públicos e se referem às escolas do estado de São Paulo.
+</p>
+
+<p><strong>Em outras palavras:</strong> quis saber se escolas com muitos alunos têm médias melhores ou piores no Enem.</p>
+
+<h2>Metodologia</h2>
+<p>
+Usei os microdados do Enem por escola e filtrei apenas os registros de São Paulo. Após limpar os dados e remover valores ausentes, apliquei a correlação de Pearson entre as variáveis:
+</p>
+<ul>
+  <li><strong>NU_MATRICULAS:</strong> número de alunos matriculados;</li>
+  <li><strong>NU_MEDIA_OBJ:</strong> média total da escola no Enem.</li>
+</ul>
+
+<p>
+A correlação de Pearson mede a relação linear entre duas variáveis e varia entre -1 e 1.
+</p>
+
+<h2>Resultado</h2>
+<ul>
+  <li><strong>r = -0.1579</strong></li>
+  <li><strong>p-valor &lt; 0.0001</strong></li>
+</ul>
+
+<p>
+O resultado mostra uma correlação negativa fraca, mas estatisticamente significativa. Isso sugere que escolas com mais alunos tendem a ter médias ligeiramente menores.
+</p>
+
+<h2>Visualizações</h2>
+<p>Dispersão com linha de tendência:</p>
+<img src="projeto-correlacao-enem/imagens/correlacao-matricula-media.png" alt="Dispersão com linha de tendência">
+
+<p>Dispersão simples:</p>
+<img src="projeto-correlacao-enem/imagens/dispersao-matriculas-vs-nota.png" alt="Gráfico de dispersão simples">
+
+<p>Matriz de correlação:</p>
+<img src="projeto-correlacao-enem/imagens/matriz-correlacao.png" alt="Matriz de Correlação">
+
+<p>Heatmap com as 10 maiores correlações:</p>
+<img src="projeto-correlacao-enem/imagens/heatmap-top-correlacoes.png" alt="Top 10 Correlações">
+
+<h2>Conclusão</h2>
+<p>
+Apesar da correlação não ser forte, os resultados indicam que escolas com muitos alunos podem enfrentar dificuldades adicionais que afetam o desempenho médio. Isso pode estar relacionado à estrutura física, atenção individualizada, ou gestão pedagógica.
+</p>
+
+<p><strong>Em outras palavras:</strong> escolas muito grandes, com muitos alunos, tendem a ter médias um pouco menores no Enem — talvez por dificuldades em manter a qualidade com muitos estudantes.</p>
+
+<a class="voltar" href="index.html">← Voltar ao início</a>
+
+</body>
+</html>

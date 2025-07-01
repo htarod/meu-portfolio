@@ -1,51 +1,84 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeto com Power BI</title>
+  <meta charset="UTF-8">
+  <title>Projeto Power BI - Dashboard de Indicadores Financeiros</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
       background-color: #f9f9f9;
       color: #333;
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
     }
-    h1 {
-      color: #2c3e50;
+    h1, h2 {
+      color: #1e4976;
     }
-    a {
-      color: #2980b9;
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .em-outras-palavras {
+      background: #f5f5f5;
+      border-left: 4px solid #1e4976;
+      padding: 15px;
+      margin-top: 30px;
+      font-style: italic;
+    }
+    .voltar {
+      display: inline-block;
+      margin-top: 40px;
       text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
+      color: #1e4976;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>Projeto com Power BI</h1>
 
-  <p><strong>Descrição:</strong> Criei um dashboard interativo em Power BI para análise de desempenho de vendas regionais com filtros por período, categoria e time de vendas.</p>
+  <h1>Dashboard de Indicadores Econômicos com Power BI</h1>
 
-  <p><strong>Objetivo:</strong> Demonstrar a criação de relatórios visuais profissionais que possibilitam insights rápidos e estratégicos.</p>
-
-  <p><strong>Tecnologias utilizadas:</strong> Power BI Desktop, DAX, Power Query.</p>
-
-  <p><strong>Etapas do processo:</strong></p>
-  <ul>
-    <li>ETL dos dados com Power Query (tratamento, normalização e junções)</li>
-    <li>Criação de colunas e medidas com DAX</li>
-    <li>Montagem de relatórios interativos com filtros, slicers e KPIs</li>
-    <li>Publicação e compartilhamento via Power BI Service</li>
-  </ul>
-
-  <p><strong>Resultado:</strong> Um painel limpo e intuitivo com indicadores de metas atingidas, vendas por região e alertas visuais.</p>
-
-  <p><strong>Link para o relatório ou repositório:</strong>
-    <a href="https://github.com/htarod/projeto-powerbi" target="_blank">github.com/htarod/projeto-powerbi</a>
+  <p>
+    Neste projeto, desenvolvi um dashboard interativo no Power BI utilizando dados do IPCA (Índice de Preços ao Consumidor Amplo), extraídos do site do Banco Central e organizados com Python e SQL.
   </p>
 
-  <p><a href="index.html">← Voltar ao início</a></p>
+  <div class="em-outras-palavras">
+    Em outras palavras: criei um painel visual que mostra a inflação no Brasil, com gráficos interativos construídos a partir de dados reais e atualizados automaticamente.
+  </div>
+
+  <h2>Objetivo</h2>
+  <p>
+    O foco foi mostrar a evolução da inflação nos últimos anos, permitindo que qualquer pessoa consiga navegar pelos dados, entender médias mensais, tendências, variações por estado e comparar indicadores.
+  </p>
+
+  <h2>Visualizações</h2>
+  <p>O dashboard traz:</p>
+  <ul>
+    <li>Evolução histórica do IPCA</li>
+    <li>Variação mensal e acumulada</li>
+    <li>Média e desvio padrão por grupo de produtos</li>
+    <li>Segmentações por ano, categoria e região</li>
+  </ul>
+
+  <img src="projeto-powerbi/imagens/dashboard_ipca.png" alt="Dashboard IPCA no Power BI">
+
+  <h2>Como os dados foram tratados</h2>
+  <p>
+    Antes de importar para o Power BI, usei Python para coletar os dados do Banco Central via API. Em seguida, salvei os dados em uma base SQLite e apliquei consultas SQL para gerar métricas como média, desvio padrão e percentuais de variação.
+  </p>
+
+  <h2>Por que Power BI?</h2>
+  <p>
+    Escolhi o Power BI por ser uma das ferramentas mais utilizadas em empresas para análise visual e relatórios executivos. Além disso, ele permite atualizações automáticas a partir de arquivos locais ou APIs externas.
+  </p>
+
+  <p><strong>Repositório:</strong> <a href="https://github.com/htarod/projeto-powerbi" target="_blank">github.com/htarod/projeto-powerbi</a></p>
+
+  <a class="voltar" href="index.html">← Voltar ao início</a>
+
 </body>
 </html>

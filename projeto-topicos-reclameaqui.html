@@ -1,81 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Análise de Tópicos - Reclame Aqui</title>
+  <meta charset="UTF-8">
+  <title>Modelagem de Tópicos em Reclamações</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
+      background: #f9f9f9;
+      color: #333;
+      max-width: 900px;
+      margin: auto;
       padding: 20px;
       line-height: 1.6;
-      background-color: #f9f9f9;
     }
     h1, h2 {
-      color: #333;
+      color: #1e4976;
     }
-    a {
-      color: #1a73e8;
-      text-decoration: none;
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
-    a:hover {
-      text-decoration: underline;
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
     }
-    .button-link {
+    .em-outras-palavras {
+      background: #f5f5f5;
+      border-left: 4px solid #1e4976;
+      padding: 15px;
+      margin-top: 30px;
+      font-style: italic;
+    }
+    .voltar {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background-color: #1a73e8;
-      color: #fff;
-      border-radius: 5px;
+      margin-top: 40px;
       text-decoration: none;
-    }
-    .button-link:hover {
-      background-color: #155cb0;
+      color: #1e4976;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
-  <h1>Análise de Tópicos em Reclamações do Reclame Aqui</h1>
 
-  <p>Este projeto tem como objetivo aplicar técnicas de Processamento de Linguagem Natural (NLP) e modelagem de tópicos para analisar reclamações de consumidores extraídas do site Reclame Aqui. A ideia é identificar automaticamente os principais assuntos abordados nas reclamações, agrupando os textos em tópicos coerentes.</p>
+  <h1>Modelagem de Tópicos com LDA em Reclamações</h1>
 
-  <h2>Etapas do Projeto</h2>
+  <p>
+    Neste projeto, apliquei técnicas de modelagem de tópicos para agrupar automaticamente reclamações do site Reclame Aqui em categorias temáticas, usando o algoritmo LDA (Latent Dirichlet Allocation).
+  </p>
+
+  <div class="em-outras-palavras">
+    Em outras palavras: ensinei o computador a descobrir sobre o que as pessoas estão reclamando, sem precisar ler todas as mensagens.
+  </div>
+
+  <h2>Etapas executadas</h2>
   <ul>
-    <li><strong>Coleta de dados:</strong> Utilização de um dataset com milhares de reclamações públicas da plataforma Reclame Aqui.</li>
-    <li><strong>Pré-processamento:</strong> Limpeza dos textos, remoção de stopwords em português e tokenização.</li>
-    <li><strong>Modelagem de Tópicos (LDA):</strong> Aplicação do modelo LDA (Latent Dirichlet Allocation) para extrair os principais temas tratados nas reclamações.</li>
-    <li><strong>Visualização:</strong> Geração de visualizações gráficas, incluindo uma visualização interativa com a biblioteca PyLDAvis.</li>
+    <li>Pré-processamento dos textos (limpeza, stopwords, lematização)</li>
+    <li>Tokenização com gensim</li>
+    <li>Criação do dicionário e corpus</li>
+    <li>Treinamento do modelo LDA</li>
+    <li>Visualização com pyLDAvis</li>
   </ul>
 
-  <h2>Aplicações Práticas</h2>
-  <p>Essa análise pode ser útil para empresas que desejam:</p>
-  <ul>
-    <li>Identificar os principais problemas relatados pelos clientes.</li>
-    <li>Monitorar a reputação da marca.</li>
-    <li>Priorizar melhorias nos seus serviços ou produtos.</li>
-    <li>Automatizar a categorização de reclamações para atendimento mais eficiente.</li>
-  </ul>
+  <img src="projeto-topicos-reclameaqui/imagens/lda_visualizacao.png" alt="Visualização de tópicos com pyLDAvis">
 
-  <h2>Visualização Interativa</h2>
-  <p>Explore os tópicos identificados de forma interativa através do gráfico abaixo. Você poderá ver as palavras mais relevantes para cada tópico e sua distribuição:</p>
+  <h2>Resultado</h2>
+  <p>
+    O modelo gerou agrupamentos coerentes, como tópicos sobre atrasos, cobranças indevidas, atendimento e problemas com login. Essa abordagem permite identificar temas predominantes em grandes volumes de texto.
+  </p>
 
-  <a href="imagens/lda_interativo.html" class="button-link" target="_blank">Ver Visualização Interativa</a>
+  <p><strong>Repositório:</strong> <a href="https://github.com/htarod/projeto-nlp" target="_blank">github.com/htarod/projeto-nlp</a></p>
 
-  <h2>Dataset Utilizado</h2>
-  <p>O dataset original foi processado para incluir somente colunas relevantes como título e texto completo das reclamações. O arquivo utilizado foi <code>reclamacoes_completas.csv</code>, contendo milhares de registros.</p>
-
-  <h2>Tecnologias e Bibliotecas</h2>
-  <ul>
-    <li>Python 3.10</li>
-    <li>Pandas, NumPy, Matplotlib, Seaborn</li>
-    <li>NLTK, Gensim, Scikit-learn</li>
-    <li>PyLDAvis para visualização interativa</li>
-  </ul>
-
-  <p>Este projeto faz parte do meu portfólio como cientista de dados. Você pode acessar o código-fonte completo no meu GitHub.</p>
+  <a class="voltar" href="index.html">← Voltar ao início</a>
 
 </body>
 </html>

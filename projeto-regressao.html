@@ -1,107 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Regressão Linear - Preço de Imóveis</title>
+  <title>Projeto Regressão Linear - ENEM São Paulo</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f7f7;
-      color: #293c58;
-      margin: 0;
-      padding: 40px;
-      max-width: 1000px;
-      margin-inline: auto;
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
     }
     h1, h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-    pre {
-      background: #eee;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
+      color: #1e4976;
     }
     img {
       max-width: 100%;
       margin: 20px 0;
-      border: 1px solid #ccc;
       border-radius: 8px;
+      border: 1px solid #ccc;
     }
-    a {
-      color: #293c58;
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    .em-outras-palavras {
+      background: #f5f5f5;
+      border-left: 4px solid #1e4976;
+      padding: 15px;
+      margin-top: 30px;
+      font-style: italic;
+    }
+    .voltar {
+      display: inline-block;
+      margin-top: 40px;
       text-decoration: none;
+      color: #1e4976;
       font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-<h1>Regressão Linear - Preço de Imóveis em São Paulo</h1>
+  <h1>Regressão Linear: ENEM x Número de Matrículas (SP)</h1>
 
-<p>Este projeto analisa como diferentes características influenciam o preço de imóveis em São Paulo. Utilizei regressão linear simples e múltipla para modelar essa relação com base em dados reais.</p>
+  <p>
+    Neste projeto, apliquei regressão linear simples para verificar se existe relação entre o número de matrículas e o desempenho médio das escolas públicas no ENEM de 2015 no estado de São Paulo.
+  </p>
 
-<h2>1.Dataset e Objetivo</h2>
-<p>O conjunto de dados foi obtido no <a href="https://www.kaggle.com/datasets/argonalyst/sao-paulo-real-estate-sale-rent-april-2019" target="_blank">Kaggle</a>, contendo informações como área útil, número de quartos, banheiros, suítes e vagas de garagem.</p>
+  <div class="em-outras-palavras">
+    Em outras palavras: tentei descobrir se escolas com mais alunos vão melhor ou pior no ENEM — usando matemática para entender essa possível relação.
+  </div>
 
-<h2>2. Limpeza e Exploração Inicial</h2>
-<pre><code>df = pd.read_csv('dados/imoveis_sp.csv')
-df = df[(df['Price'] > 0) & (df['Size'] > 0)]
-df.dropna(subset=['Price', 'Size'], inplace=True)
-</code></pre>
+  <h2>Fonte de Dados</h2>
+  <p>
+    Os dados foram extraídos do conjunto "Microdados ENEM por Escola 2015". Após filtragem, mantive apenas escolas públicas do estado de São Paulo.
+  </p>
 
-<h3>Matriz de Correlação</h3>
-<img src="projeto-regressao/imagens/grafico-correlacao.png" alt="Matriz de Correlação">
+  <h2>Etapas realizadas</h2>
+  <ul>
+    <li>Limpeza e filtragem dos dados com pandas</li>
+    <li>Visualização com seaborn e matplotlib</li>
+    <li>Ajuste do modelo de regressão com statsmodels</li>
+    <li>Cálculo do R², erro padrão e coeficientes</li>
+  </ul>
 
-<h2>3.Regressão Linear Simples</h2>
-<p>Analisamos a relação entre área útil (Size) e preço (Price).</p>
+  <h2>Visualização</h2>
+  <img src="projeto-regressao/imagens/regressao_grafico.png" alt="Gráfico de dispersão com linha de regressão">
 
-<pre><code>
-X = df['Size']
-y = df['Price']
-X = sm.add_constant(X)
-modelo = sm.OLS(y, X).fit()
-print(modelo.summary())
-</code></pre>
+  <h2>Resultados</h2>
+  <p>
+    O modelo indicou correlação fraca entre número de matrículas e nota média. O R² foi inferior a 0.1, o que sugere que outros fatores são mais relevantes para o desempenho escolar.
+  </p>
 
-<h3>Gráfico da Regressão</h3>
-<img src="projeto-regressao/imagens/grafico-regressao.png" alt="Regressão Linear Simples">
+  <h2>Reflexão</h2>
+  <p>
+    A baixa correlação reforça a importância de aprofundar a análise com variáveis como investimento por aluno, infraestrutura, localização e perfil socioeconômico. Esse projeto mostra como a estatística pode indicar quando <em>não</em> há relação significativa.
+  </p>
 
-<p><strong>Resultado:</strong> cada m² adicional aumenta o preço em R$ 3.826,36. O modelo explica 14,3% da variação do preço.</p>
+  <p><strong>Repositório:</strong> <a href="https://github.com/htarod/projeto-regressao" target="_blank">github.com/htarod/projeto-regressao</a></p>
 
-<h2>4.Regressão Linear Múltipla</h2>
-<p>Incluímos mais variáveis: Size, Rooms, Toilets, Suites e Parking.</p>
-
-<pre><code>
-X = df[['Size', 'Rooms', 'Toilets', 'Suites', 'Parking']]
-y = df['Price']
-X = sm.add_constant(X)
-modelo_multiplo = sm.OLS(y, X).fit()
-print(modelo_multiplo.summary())
-</code></pre>
-
-<p><strong>Resultado:</strong> o modelo múltiplo aumentou o R² para 16%. Variáveis mais relevantes:
-<ul>
-  <li><strong>Size</strong>: +R$ 2.418 por m²</li>
-  <li><strong>Toilets</strong>: +R$ 128 mil por banheiro</li>
-  <li><strong>Parking</strong>: +R$ 60 mil por vaga</li>
-</ul>
-</p>
-
-<h2>5.Gráficos Complementares</h2>
-
-<h3>Distribuição dos Preços</h3>
-<img src="projeto-regressao/imagens/distribuicao-precos.png" alt="Distribuição de Preços">
-
-<h3>Preço vs. Tamanho com número de Vagas</h3>
-<img src="projeto-regressao/imagens/size-vs-price-parking.png" alt="Dispersão Size vs Price com Parking">
-
-<h2>Repositório no GitHub</h2>
-<p><a href="https://github.com/htarod/projeto-regressao" target="_blank">github.com/htarod/projeto-regressao</a></p>
+  <a class="voltar" href="index.html">← Voltar ao início</a>
 
 </body>
 </html>

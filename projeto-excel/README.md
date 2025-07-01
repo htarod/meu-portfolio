@@ -1,4 +1,4 @@
-# Dashboard de Vendas com Excel Avançado
+## Dashboard de Vendas com Excel Avançado
 
 Este projeto demonstra a criação de um dashboard interativo em Excel, utilizando recursos avançados como Tabelas Dinâmicas, Segmentações de Dados, Gráficos Dinâmicos e Fórmulas Avançadas (ÍNDICE, CORRESP, SE, SOMASES, etc.).
 
@@ -37,5 +37,3 @@ Esse modelo pode ser replicado em contextos reais de pequenas e médias empresas
 *(insira uma imagem do dashboard aqui futuramente, se desejar)*
 
 ---
-
-**Criado por Agatha Rodrigues — Cientista de Dados com foco em soluções aplicadas.**

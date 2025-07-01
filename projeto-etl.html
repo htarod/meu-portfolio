@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeto de Análise de Dados com ETL</title>
+  <meta charset="UTF-8">
+  <title>Projeto de ETL com ENEM</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f7f7f7;
-      color: #293c58;
-      margin: 0;
-      padding: 40px;
-      max-width: 1000px;
-      margin-inline: auto;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
     }
     h1, h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 5px;
-    }
-    pre {
-      background: #eee;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
+      color: #1e4976;
     }
     img {
       max-width: 100%;
@@ -30,54 +22,95 @@
       border: 1px solid #ccc;
       border-radius: 8px;
     }
-    a {
-      color: #293c58;
-      text-decoration: none;
-      font-weight: bold;
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
     }
-    a:hover {
-      text-decoration: underline;
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .voltar {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #1e4976;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <h1>Projeto de Análise de Dados com ETL</h1>
+<h1>Projeto de ETL com Dados do ENEM</h1>
 
-  <p><strong>Descrição:</strong> Este projeto simula um fluxo completo de ETL (Extração, Transformação e Carga) aplicado a dados de vendas mensais. O objetivo é transformar dados brutos em insights acionáveis para tomada de decisão.</p>
+<h2>Objetivo</h2>
+<p>
+Neste projeto, realizei um processo completo de ETL (Extração, Transformação e Carga) com os microdados do Enem por Escola. O objetivo foi transformar um arquivo CSV bruto em um conjunto de dados limpo, estruturado e pronto para análise.
+</p>
 
-  <h2>Tecnologias Utilizadas</h2>
-  <ul>
-    <li>Python</li>
-    <li>Pandas</li>
-    <li>Jupyter Notebook</li>
-    <li>Matplotlib</li>
-  </ul>
+<p><strong>Em outras palavras:</strong> peguei um arquivo gigante e desorganizado do Enem e transformei em algo limpo e fácil de usar para fazer análises.</p>
 
-  <h2>🔧 Etapas do Processo</h2>
-  <ul>
-    <li>Leitura dos arquivos CSV (Janeiro e Fevereiro)</li>
-    <li>Unificação e limpeza dos dados</li>
-    <li>Cálculo de colunas derivadas (como Valor Total)</li>
-    <li>Visualização com gráficos</li>
-  </ul>
+<h2>Antes e Depois do Arquivo CSV</h2>
+<p>Comparativo entre o arquivo original e o arquivo tratado:</p>
+<img src="projeto-etl/imagens/csv_antes.png" alt="Arquivo CSV antes do tratamento">
+<img src="projeto-etl/imagens/csv_depois.png" alt="Arquivo CSV após o tratamento">
 
-  <h2>Código de Exemplo</h2>
-  <pre><code>
-df_jan = pd.read_csv("dados/vendas_janeiro.csv")
-df_fev = pd.read_csv("dados/vendas_fevereiro.csv")
-df = pd.concat([df_jan, df_fev])
-df["Valor Total"] = df["Quantidade"] * df["Preço Unitário"]
-  </code></pre>
+<h2>Consultas SQL Realizadas</h2>
 
-  <h2>Visualização</h2>
-  <p>Gráfico gerado com base nos valores totais por mês:</p>
-  <img src="projeto-etl/imagens/grafico-vendas.png" alt="Gráfico de Vendas por Mês">
+<h3>Média Geral por Estado (UF)</h3>
+<img src="projeto-etl/imagens/query_media_uf.png" alt="Consulta SQL média por UF">
 
-  <h2>🔗 Repositório</h2>
-  <p><a href="https://github.com/htarod/projeto-etl" target="_blank">github.com/htarod/projeto-etl</a></p>
+<h3>Média por Tipo de Escola</h3>
+<img src="projeto-etl/imagens/query_media_tipo_escola.png" alt="Consulta SQL por tipo de escola">
 
-  <p><a href="index.html">← Voltar ao início</a></p>
+<h3>Municípios com Maiores Médias</h3>
+<img src="projeto-etl/imagens/query_municipios_maior_media.png" alt="Consulta SQL municípios top 10">
+
+<h2>Script Python para ETL</h2>
+<p>
+O código abaixo representa o processo completo de tratamento, desde a leitura do CSV até a geração do novo arquivo:
+</p>
+
+<pre><code>import pandas as pd
+
+caminho_csv_original = "dados/MICRODADOS_ENEM_ESCOLA.csv"
+df = pd.read_csv(caminho_csv_original, sep=';', encoding='latin1')
+
+colunas_selecionadas = {
+    'SG_UF_ESCOLA': 'uf',
+    'NO_MUNICIPIO_ESCOLA': 'municipio',
+    'TP_DEPENDENCIA_ADM_ESCOLA': 'cod_tipo_escola',
+    'NU_MEDIA_MT': 'media_matematica',
+    'NU_MEDIA_CH': 'media_humanas',
+    'NU_MEDIA_LP': 'media_linguagens'
+}
+
+df = df[list(colunas_selecionadas.keys())].rename(columns=colunas_selecionadas)
+df = df.dropna()
+
+df['tipo_escola'] = df['cod_tipo_escola'].map({
+    1: 'Federal',
+    2: 'Estadual',
+    3: 'Municipal',
+    4: 'Privada'
+})
+
+df['media_geral'] = df[['media_matematica', 'media_humanas', 'media_linguagens']].mean(axis=1).round(2)
+
+colunas_finais = ['uf', 'municipio', 'tipo_escola', 'media_matematica', 'media_humanas', 'media_linguagens', 'media_geral']
+df = df[colunas_finais]
+
+df.to_csv("dados/enem_tratado.csv", index=False)</code></pre>
+
+<h2>Conclusão</h2>
+<p>
+Este projeto mostra como organizar um conjunto de dados extenso para futuras análises com SQL e ferramentas de BI. Usei esse mesmo dataset tratado em outros projetos do meu portfólio, o que reforça sua utilidade como base limpa e confiável.
+</p>
+
+<a class="voltar" href="index.html">← Voltar ao início</a>
 
 </body>
 </html>

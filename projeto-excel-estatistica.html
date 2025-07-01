@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatística com Excel – Análise de Despesas Públicas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #1e4976;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+    h3 {
+      margin-top: 25px;
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      padding-left: 20px;
+    }
+    code {
+      background-color: #ececec;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    img {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    
+    .voltar {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #1e4976;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Estatística com Excel: Despesas em Transações Correntes</h1>
+  <p style="text-align: center;">Análise exploratória com dados reais do Banco Central do Brasil</p>
+
+  <h2>1. Fonte de Dados</h2>
+  <p>
+    Usei a série histórica Transações Correntes, Mensal, Despesa (código SGS 22703), disponível no site de dados abertos do Banco Central. O arquivo CSV possui duas colunas:
+  </p>
+  <ul>
+    <li>data – Data da transação</li>
+    <li>valor – Valor em milhões de dólares</li>
+  </ul>
+
+  <h2>2. Etapas no Excel</h2>
+
+  <h3>2.1 Carregamento e Limpeza</h3>
+  <ol>
+    <li>Importei o CSV via Power Query</li>
+    <li>Convertei a coluna de datas e ordenei os registros</li>
+  </ol>
+
+  <h3>2.2 Gráfico de Linha</h3>
+  <p>Visualização das despesas mensais:</p>
+  <img src="projeto-excel-estatistica/imagens/grafico_despesas_mensais.png" alt="Gráfico de linha das despesas mensais">
+
+  <h3>2.3 Média Móvel (12 Meses)</h3>
+  <p>Na nova coluna <code>média_móvel_12M</code>, utilizei a fórmula:</p>
+  <code>=MÉDIA.DESLOC(B2;-11;0;12)</code>
+  <img src="projeto-excel-estatistica/imagens/grafico_despesas_media_movel.png" alt="Média móvel aplicada às despesas">
+
+  <h3>2.4 Regressão Linear</h3>
+  <ol>
+    <li>Criei um índice temporal com <code>=LIN()-1</code></li>
+    <li>Inseri gráfico de dispersão</li>
+    <li>Adicionei linha de tendência com R²</li>
+  </ol>
+  <img src="projeto-excel-estatistica/imagens/grafico_regressao_linear.png" alt="Regressão linear sobre as despesas mensais">
+
+  <h2>3. Fórmulas Utilizadas</h2>
+  <ul>
+    <li><strong>Média Móvel 12M:</strong> <code>=MÉDIA.DESLOC(B2;-11;0;12)</code></li>
+    <li><strong>Crescimento Mensal (%):</strong> <code>=(B3-B2)/B2</code></li>
+    <li><strong>Índice Temporal:</strong> <code>=LIN()-1</code></li>
+  </ul>
+
+  <h2>4. Interpretação do R²</h2>
+  <p>
+    O coeficiente de determinação R² mostra o quanto a variação no valor pode ser explicada pelo tempo. Quanto mais próximo de 1, mais forte a tendência linear.
+  </p>
+
+  <h2>5. Por que usei Excel?</h2>
+  <p>
+    Apesar de dominar Python e suas bibliotecas (pandas, matplotlib etc.), escolhi o Excel para mostrar domínio de ferramentas corporativas. O resultado foi uma planilha dinâmica, com campos editáveis e análise acessível até para usuários não técnicos.
+  </p>
+
+  <div class="em-outras-palavras">
+    <strong>Em outras palavras:</strong> usei o Excel para transformar dados econômicos complexos em gráficos simples e informativos. Com poucas fórmulas e visualizações, consegui revelar tendências e padrões que ajudam a entender os gastos externos do país ao longo do tempo.
+  </div>
+
+  <a class="voltar" href="index.html">← Voltar ao início</a>
+
+</body>
+</html>

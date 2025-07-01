@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto NER - Extração de Entidades em Reclamações</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #1e4976;
+    }
+    img {
+      max-width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+
+    }
+    .voltar {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #1e4976;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Projeto NER: Extração de Entidades Nomeadas em Reclamações</h1>
+
+  <h2>Introdução</h2>
+  <p>
+    Neste projeto, utilizei técnicas de Processamento de Linguagem Natural (NLP) para identificar automaticamente entidades relevantes em reclamações extraídas do site Reclame Aqui. Trabalhei com o modelo <code>pt_core_news_sm</code> do spaCy para detectar nomes de empresas, localidades e valores monetários.
+  </p>
+
+  <div class="em-outras-palavras">
+    <strong>Em outras palavras:</strong> ensinei a máquina a reconhecer automaticamente informações como empresas, cidades e valores dentro de reclamações reais — ou seja, transformar texto em dados úteis.
+  </div>
+
+  <h2>Como executei o projeto</h2>
+  <p>
+    O dataset foi composto por reclamações públicas. Após o pré-processamento textual, apliquei a extração de entidades nomeadas (Named Entity Recognition - NER). As entidades extraídas foram agrupadas por tipo e frequência.
+  </p>
+
+  <h2>Visualização</h2>
+  <p>Gráfico com as entidades mais mencionadas:</p>
+  <img src="projeto-ner/imagens/grafico_entidades.png" alt="Entidades mais frequentes">
+
+  <h2>Conclusão</h2>
+  <p>
+    Este projeto demonstra como técnicas modernas de NLP podem estruturar grandes volumes de texto. Com isso, é possível automatizar a identificação de padrões, gerar alertas e acelerar análises de atendimento ao consumidor.
+  </p>
+
+  <a class="voltar" href="index.html">← Voltar ao início</a>
+
+</body>
+</html>

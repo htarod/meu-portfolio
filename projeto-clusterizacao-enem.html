@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Clusterização de Escolas - ENEM</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 960px;
+      margin: auto;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1, h2 {
+      color: #1e4976;
+    }
+    img {
+      max-width: 100%;
+      margin-bottom: 30px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .leigo {
+      background: #f5f5f5;
+      border-left: 4px solid #1e4976;
+      padding: 10px;
+      margin-top: -10px;
+      margin-bottom: 30px;
+    }
+    .voltar {
+      display: inline-block;
+      margin-top: 40px;
+      text-decoration: none;
+      color: #1e4976;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Clusterização de Escolas com base no ENEM</h1>
+
+  <h2>Introdução</h2>
+  <p>
+    Neste projeto, utilizei a técnica de clusterização com KMeans para agrupar escolas do estado de São Paulo a partir de indicadores de desempenho no Enem 2015. Considerei variáveis como número de matrículas e médias por área (Ciências Humanas, Linguagens, Matemática, Redação e Ciências da Natureza).
+  </p>
+
+  <p><strong>Em outras palavras:</strong> minha ideia foi identificar grupos de escolas que tenham perfis parecidos — como número de alunos e desempenho — para entender melhor padrões no sistema educacional.</p>
+
+  <h2>Pré-processamento</h2>
+  <p>
+    Selecionei apenas as escolas paulistas e normalizei os dados com o StandardScaler, para garantir que todas as variáveis tivessem o mesmo peso na clusterização.
+  </p>
+
+  <h2>Distribuição das Variáveis por Cluster</h2>
+  <p>Aqui estão os boxplots que mostram como cada variável se comporta em cada grupo identificado:</p>
+
+  <img src="projeto-clusterizacao-enem/imagens/boxplot_nu_matriculas.png" alt="Boxplot NU_MATRICULAS">
+  <img src="projeto-clusterizacao-enem/imagens/boxplot_nu_media_ch.png" alt="Boxplot NU_MEDIA_CH">
+  <img src="projeto-clusterizacao-enem/imagens/boxplot_nu_media_cn.png" alt="Boxplot NU_MEDIA_CN">
+  <img src="projeto-clusterizacao-enem/imagens/boxplot_nu_media_lp.png" alt="Boxplot NU_MEDIA_LP">
+  <img src="projeto-clusterizacao-enem/imagens/boxplot_nu_media_mt.png" alt="Boxplot NU_MEDIA_MT">
+  <img src="projeto-clusterizacao-enem/imagens/boxplot_nu_media_red.png" alt="Boxplot NU_MEDIA_RED">
+
+  <p><strong>Em outras palavras:</strong> os gráficos mostram como os grupos se comportam. Por exemplo, algumas escolas têm muitos alunos e notas mais baixas; outras têm poucos alunos e notas mais altas.</p>
+
+  <h2>Visualização dos Clusters</h2>
+  <p>
+    Para facilitar a visualização, usei duas variáveis principais — média em Matemática e Redação — e representei cada escola como um ponto colorido:
+  </p>
+
+  <img src="projeto-clusterizacao-enem/imagens/cluster-mt-redacao.png" alt="Clusters com base em Matemática e Redação">
+
+  <p><strong>Em outras palavras:</strong> cada cor representa um grupo diferente de escola. Com isso, consigo ver quais se destacam mais ou menos em determinadas áreas.</p>
+
+  <h2>Conclusão</h2>
+  <p>
+    A clusterização me permitiu identificar padrões distintos entre as escolas paulistas com base nos dados do Enem. Esses grupos ajudam a entender melhor o sistema de ensino e podem ser úteis na formulação de políticas públicas direcionadas.
+  </p>
+
+  <p><strong>Em outras palavras:</strong> consegui separar as escolas em grupos com perfis parecidos. Isso pode ajudar na tomada de decisão sobre onde investir e como melhorar a qualidade do ensino.</p>
+
+  <a class="voltar" href="index.html">← Voltar ao início</a>
+</body>
+</html>

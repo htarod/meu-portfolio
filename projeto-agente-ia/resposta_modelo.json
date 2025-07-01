@@ -1,0 +1,12 @@
+{
+  "alta": {
+    "elogio": "Agradecemos pelo seu contato urgente e positivo. Nossa equipe irá priorizar sua mensagem.",
+    "reclamação": "Sentimos muito pela sua experiência. Sua mensagem urgente foi priorizada e será atendida rapidamente.",
+    "neutra": "Obrigado pelo aviso. Estamos tratando seu caso com urgência."
+  },
+  "baixa": {
+    "elogio": "Agradecemos pelo feedback positivo! Ficamos felizes em ajudar.",
+    "reclamação": "Lamentamos o ocorrido. Em breve retornaremos com mais informações.",
+    "neutra": "Obrigado por nos contatar. Em breve responderemos sua solicitação."
+  }
+}
