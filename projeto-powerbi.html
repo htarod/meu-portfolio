@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Projeto Power BI - Dashboard de Indicadores Financeiros</title>
+  <title>Projetos Power BI - Dashboards Financeiro e RH</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -24,7 +24,7 @@
     }
     .em-outras-palavras {
       background: #f5f5f5;
-      border-left: 4px solid #1e4976;
+      
       padding: 15px;
       margin-top: 30px;
       font-style: italic;
@@ -40,41 +40,44 @@
 </head>
 <body>
 
-  <h1>Dashboard de Indicadores Econômicos com Power BI</h1>
+  <h1>Dashboards com Power BI</h1>
 
   <p>
-    Neste projeto, desenvolvi um dashboard interativo no Power BI utilizando dados do IPCA (Índice de Preços ao Consumidor Amplo), extraídos do site do Banco Central e organizados com Python e SQL.
+    Nesta página, apresento dois projetos desenvolvidos com Power BI, utilizando dados reais para construção de dashboards interativos com foco em visualização e análise estratégica. Os projetos envolvem também etapas de tratamento de dados com Python, SQL e design no Figma.
   </p>
 
   <div class="em-outras-palavras">
-    Em outras palavras: criei um painel visual que mostra a inflação no Brasil, com gráficos interativos construídos a partir de dados reais e atualizados automaticamente.
+    Em outras palavras: criei painéis interativos bonitos e funcionais para transformar dados financeiros e de recursos humanos em insights visuais fáceis de entender.
   </div>
 
-  <h2>Objetivo</h2>
+  <h2>Dashboard Financeiro</h2>
   <p>
-    O foco foi mostrar a evolução da inflação nos últimos anos, permitindo que qualquer pessoa consiga navegar pelos dados, entender médias mensais, tendências, variações por estado e comparar indicadores.
+    O primeiro projeto é um dashboard financeiro com foco em receitas, despesas e saldo ao longo do tempo. Os dados foram organizados em Python e importados para o Power BI, que permite segmentações por período e análise de variações.
   </p>
 
-  <h2>Visualizações</h2>
-  <p>O dashboard traz:</p>
+  <p>
+    O layout visual foi previamente planejado e modelado no Figma para garantir clareza e estética:
+  </p>
+  <img src="projeto-powerbi/imagens/dashboard-financeiro-figma.png" alt="Layout planejado no Figma">
+
+  <p>
+    A seguir, o resultado final no Power BI com os gráficos funcionais e filtros interativos:
+  </p>
+  <img src="projeto-powerbi/imagens/dashboard-financeiro-pbi.jpeg" alt="Dashboard financeiro no Power BI">
+
+  <h2>Dashboard de RH</h2>
+  <p>
+    O segundo projeto aborda dados de recursos humanos, com foco em distribuição por cargos, tempo de casa, áreas da empresa e envolvimento dos funcionários. A apresentação foi pensada para fornecer rapidamente uma visão geral da força de trabalho.
+  </p>
+
+  <img src="projeto-powerbi/imagens/painel-rh.jpeg" alt="Dashboard de RH no Power BI">
+
+  <h2>Ferramentas utilizadas</h2>
   <ul>
-    <li>Evolução histórica do IPCA</li>
-    <li>Variação mensal e acumulada</li>
-    <li>Média e desvio padrão por grupo de produtos</li>
-    <li>Segmentações por ano, categoria e região</li>
+    <li>Power BI para construção dos dashboards e interatividade</li>
+    <li>Python e SQL para tratamento e organização dos dados</li>
+    <li>Figma para design do layout inicial do dashboard financeiro</li>
   </ul>
-
-  <img src="projeto-powerbi/imagens/dashboard_ipca.png" alt="Dashboard IPCA no Power BI">
-
-  <h2>Como os dados foram tratados</h2>
-  <p>
-    Antes de importar para o Power BI, usei Python para coletar os dados do Banco Central via API. Em seguida, salvei os dados em uma base SQLite e apliquei consultas SQL para gerar métricas como média, desvio padrão e percentuais de variação.
-  </p>
-
-  <h2>Por que Power BI?</h2>
-  <p>
-    Escolhi o Power BI por ser uma das ferramentas mais utilizadas em empresas para análise visual e relatórios executivos. Além disso, ele permite atualizações automáticas a partir de arquivos locais ou APIs externas.
-  </p>
 
   <p><strong>Repositório:</strong> <a href="https://github.com/htarod/projeto-powerbi" target="_blank">github.com/htarod/projeto-powerbi</a></p>
 
